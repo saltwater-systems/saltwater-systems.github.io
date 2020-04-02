@@ -1,7 +1,7 @@
 $(document).ready(function (){
   M.AutoInit();
   loadData();
- setInterval(loadData, 6000);
+ //setInterval(loadData, 6000);
   
   function loadData() {
    	$.get('data.json', function(data) {
