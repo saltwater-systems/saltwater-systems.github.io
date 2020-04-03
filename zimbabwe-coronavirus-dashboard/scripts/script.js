@@ -208,6 +208,7 @@ function loadChart(data) {
         }
     },
     yAxis: {
+        allowDecimals: false,
         title: {
             text: 'Cumulative Number of People'
         }
