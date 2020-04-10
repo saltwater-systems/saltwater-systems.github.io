@@ -87,8 +87,8 @@ var dataset = [];
         series: [{
             name: 'Basemap',
             mapData: map,
-            borderColor: '#606060',
-            nullColor: 'rgba(200, 200, 200, 0.2)',
+            borderColor: '#fafafa',
+            nullColor: '#212121',
             showInLegend: false
         }, {
             name: 'Separators',
