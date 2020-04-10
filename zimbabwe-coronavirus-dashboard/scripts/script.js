@@ -1,10 +1,10 @@
 $(document).ready(function (){
   M.AutoInit();
   loadData();
- //setInterval(loadData, 6000);
+ //setInterval(loadData, 6000000);
   
   function loadData() {
-   	$.get('data.json', function(data) {
+    $.get('data.json', function(data) {
     switch(data.type) {
       case 'success':
         
@@ -32,139 +32,10 @@ $(document).ready(function (){
     }
 
   
-     window.simplemaps_countrymap_mapdata={
-      main_settings: {
-        //General settings
-        width: "responsive", //or 'responsive'
-        background_color: "#fafafa",
-        background_transparent: "yes",
-        border_color: "#212121",
-        pop_ups: "detect",
-        
-        //State defaults
-        state_description: "0 Active <br> 0 Deaths <br> 0 Recovered",
-        state_color: "#fafafa",
-        state_hover_color: "#616161",
-        state_url: "",
-        border_size: 1.5,
-        all_states_inactive: "no",
-        all_states_zoomable: "yes", 
-        
-        //Location defaults
-        location_description: "Location description",
-        location_url: "",
-        location_color: "#d50000",
-        location_opacity: 0.8,
-        location_hover_opacity: 1,
-        location_size: 25,
-        location_type: "circle",
-        location_image_source: "frog.png",
-        location_border_color: "#FFFFFF",
-        location_border: 2,
-        location_hover_border: 2.5,
-        all_locations_inactive: "no",
-        all_locations_hidden: "no",
-        
-        //Label defaults
-        label_color: "#fafafa",
-        label_hover_color: "#fafafa",
-        label_size: 22,
-        label_font: "Arial",
-        hide_labels: "no",
-        hide_eastern_labels: "no",
-       
-        //Zoom settings
-        zoom: "no",
-        manual_zoom: "yes",
-        back_image: "no",
-        initial_back: "no",
-        initial_zoom: "-1",
-        initial_zoom_solo: "no",
-        region_opacity: 1,
-        region_hover_opacity: 0.6,
-        zoom_out_incrementally: "yes",
-        zoom_percentage: 0.99,
-        zoom_time: 0.5,
-        
-        //Popup settings
-        popup_color: "#fafafa",
-        popup_opacity: 0.9,
-        popup_shadow: 1,
-        popup_corners: 5,
-        popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
-        popup_nocss: "no",
-        
-        //Advanced settings
-        div: "map",
-        auto_load: "yes",
-        url_new_tab: "no",
-        images_directory: "default",
-        fade_time: 0.1,
-        link_text: "View Website"
-      },
-      state_specific: {
-        ZWE524: {
-          name: "Mashonaland Central",
-          description: data.message[4]['new']+" Cumulative Cases<br>"+data.message[4]['active']+" Active <br> " + data.message[4]['deaths'] +" Deaths <br>" + data.message[4]['recovered'] + " Recovered",
-          color: stateCol(data.message[4]['new']),
-          hover_color: "default",
-          url: "default"
-        },
-        ZWE525: {
-          name: "Harare",
-          description: data.message[2]['new']+" Cumulative Cases<br>"+data.message[2]['active']+" Active <br> " + data.message[2]['deaths'] +" Deaths <br>" + data.message[2]['recovered'] + " Recovered",
-          color: stateCol(data.message[2]['new'])
-        },
-        ZWE526: {
-          name: "Matabeleland North",
-          description: data.message[8]['new']+" Cumulative Cases<br>"+data.message[8]['active']+" Active <br> " + data.message[8]['deaths'] +" Deaths <br>" + data.message[8]['recovered'] + " Recovered",
-          color: stateCol(data.message[8]['new'])
-        },
-        ZWE527: {
-          name: "Midlands",
-          description: data.message[10]['new']+" Cumulative Cases<br>"+data.message[10]['active']+" Active <br> " + data.message[10]['deaths'] +" Deaths <br>" + data.message[10]['recovered'] + " Recovered",
-          color: stateCol(data.message[10]['new'])
-        },
-        ZWE528: {
-          name: "Mashonaland East",
-          description: data.message[5]['new']+" Cumulative Cases<br>"+data.message[5]['active']+" Active <br> " + data.message[5]['deaths'] +" Deaths <br>" + data.message[5]['recovered'] + " Recovered",
-          color: stateCol(data.message[5]['new'])
-        },
-        ZWE529: {
-          name: "Manicaland",
-          description: data.message[3]['new']+" Cumulative Cases<br>"+data.message[3]['active']+" Active <br> " + data.message[3]['deaths'] +" Deaths <br>" + data.message[3]['recovered'] + " Recovered",
-          color: stateCol(data.message[3]['new'])
-        },
-        ZWE530: {
-          name: "Matabeleland South",
-          description: data.message[9]['new']+" Cumulative Cases<br>"+data.message[9]['active']+" Active <br> " + data.message[9]['deaths'] +" Deaths <br>" + data.message[9]['recovered'] + " Recovered",
-          color: stateCol(data.message[9]['new'])
-        },
-        ZWE531: {
-          name: "Bulawayo",
-          description: data.message[1]['new']+" Cumulative Cases<br>"+data.message[1]['active']+" Active <br> " + data.message[1]['deaths'] +" Deaths <br>" + data.message[1]['recovered'] + " Recovered",
-          color: stateCol(data.message[1]['new'])
-        },
-        ZWE532: {
-          name: "Masvingo",
-          description: data.message[7]['new']+" Cumulative Cases<br>"+data.message[7]['active']+" Active <br> " + data.message[7]['deaths'] +" Deaths <br>" + data.message[7]['recovered'] + " Recovered",
-          color: stateCol(data.message[7]['new'])
-        },
-        ZWE533: {
-          name: "Mashonaland West",
-          description: data.message[6]['new']+" Cumulative Cases<br>"+data.message[6]['active']+" Active <br> " + data.message[6]['deaths'] +" Deaths <br>" + data.message[6]['recovered'] + " Recovered",
-          color: stateCol(data.message[6]['new'])
-        }
-      },
-      locations:  dataset
-    };
-
-    
-    
-     $.getScript("countrymap.js").done(function() {
+     
       $('#loader').addClass('hide');
       loadChart(data);
-     });
+      loadMap(data);
      
       break;
       case 'error':
@@ -176,6 +47,68 @@ $(document).ready(function (){
     alert("You're Offline! Check Your Internet Connection.");
   })
 }//End of loadData()
+
+function loadMap(data) {
+  var H = Highcharts,
+    map = H.maps['countries/zw/zw-all'],
+    chart;
+
+var dataset = [];
+    
+    var json = data.message2;
+
+    json.forEach(function (p) {
+        p.z = p.population;
+        dataset.push(p);
+    });
+
+    chart = Highcharts.mapChart('map-div', {
+        title: {
+            text: ''
+        },
+
+        credits: {
+      enabled: false
+  },
+
+  exporting: {
+      enabled: false
+  },
+
+  legend: {
+    enabled: false
+  },
+
+        tooltip: {
+            pointFormat: '{point.capital}<br>' +
+                '{point.description}<br>' 
+        },
+
+        series: [{
+            name: 'Basemap',
+            mapData: map,
+            borderColor: '#606060',
+            nullColor: 'rgba(200, 200, 200, 0.2)',
+            showInLegend: false
+        }, {
+            name: 'Separators',
+            type: 'mapline',
+            data: H.geojson(map, 'mapline'),
+            color: '#101010',
+            enableMouseTracking: false,
+            showInLegend: false
+        }, {
+            type: 'mapbubble',
+            dataLabels: {
+                enabled: false
+            },
+            name: '',
+            data: dataset,
+            maxSize: '7%',
+            color: '#d50000'
+        }]
+    });
+}//End od loadMap()
 
 function loadChart(data) {
   var categoriesdata = [];
@@ -208,7 +141,7 @@ function loadChart(data) {
         }
     },
     yAxis: {
-        allowDecimals: false,
+      allowDecimals: false,
         title: {
             text: 'Cumulative Number of People'
         }
