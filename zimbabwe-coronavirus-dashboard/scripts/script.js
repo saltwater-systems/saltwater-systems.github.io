@@ -104,7 +104,7 @@ var dataset = [];
             },
             name: '',
             data: dataset,
-            maxSize: '7%',
+            maxSize: '5%',
             color: '#d50000'
         }]
     });
@@ -182,6 +182,5 @@ function loadChart(data) {
             
 }//End of loadChart()
 
-})
+});
 
-var hello = 7;
