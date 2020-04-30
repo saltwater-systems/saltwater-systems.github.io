@@ -106,7 +106,7 @@ var dataset = [];
             },
             name: '',
             data: dataset,
-            maxSize: '5%',
+            maxSize: '7%',
             color: '#d50000'
         }]
     });
