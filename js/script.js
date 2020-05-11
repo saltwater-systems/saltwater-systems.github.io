@@ -3,7 +3,6 @@
  */
 
 $(function () {
-new WOW().init();
 
 $(".dropdown-button").dropdown({ hover: true,
   belowOrigin: true,
@@ -21,7 +20,6 @@ $(".dropdown-button").dropdown({ hover: true,
   );
   $('.materialboxed').materialbox(); 
    $('.parallax').parallax();
-  $('.fancybox').fancybox();
   
   
 });
