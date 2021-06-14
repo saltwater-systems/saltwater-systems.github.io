@@ -43,6 +43,18 @@ body {
     color: gray;
 }
 
+.link-img {
+    border:  1.5px #0b3f5e solid;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.link-img:hover {
+    border:  2px #0b3f5e solid;
+    padding: 0px;
+    border-radius: 40px;
+}
+
 .top {
     border: 2px solid #0b3f5e;
 }
